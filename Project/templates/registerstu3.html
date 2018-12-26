@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register_Experience
+{% endblock %}
+
+{% block main %}
+    <form action="/registerstu3" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="educational_experience" placeholder="Please list your educational experiences here" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="volunteer_experience" placeholder="Please list your volunteer experiences here"type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Complete Registration</button>
+    </form>
+{% endblock %}

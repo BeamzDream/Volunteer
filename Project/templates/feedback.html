@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Feedback
+{% endblock %}
+
+{% block main %}
+    <form action="/feedback" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id="name" placeholder="Name (Optional)" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="feedback" placeholder="Please input your feedback here" type="text">
+        </div>
+        <script>
+            function feedback()
+            {
+                let name = document.querySelector('#name').value;
+                alert('Thank you for giving us feedback ' + name + '! We appreciate the time you took to make our website better!')
+            }
+        </script>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

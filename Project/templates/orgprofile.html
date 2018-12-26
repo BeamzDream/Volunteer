@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Organization Profile
+{% endblock %}
+
+
+{% block main %}
+        <center>
+            <img src= "{{image}}" alt="Profile Pic" height="300" width:"300">
+            <p>
+                <strong>
+                    {{ name }}
+                </strong> <br><br>
+                <a href="{{link}}">{{link}}</a> <br><br>
+            </p>
+            <p>
+                Category: {{ category }}
+
+            </p> <br>
+            <p>
+                {{ description }}
+            </p>
+        </center>
+{% endblock %}

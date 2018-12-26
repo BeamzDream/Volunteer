@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search results
+{% endblock %}
+
+
+{% block main %}
+<!-- Table using bootstrap with black and white design feature -->
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <!-- Looping over whole list to display orderly on screen -->
+  <tbody>
+  {% for row in result %}
+    <tr>
+      <td>{{ row.username }}</td>
+      <td> <a href="{{row.link}}">{{ row.link }}</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

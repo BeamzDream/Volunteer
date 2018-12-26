@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <label>
+            I am registering as:
+        </label> <br>
+        <label>
+            <input name="type" type="radio" value="volunteer">
+            Volunteer
+        </label> <br>
+        <label>
+            <input name="type" type="radio" value="organization">
+            Organization
+        </label> <br>
+        <button class="btn btn-primary" type="submit">Next</button>
+    </form>
+{% endblock %}

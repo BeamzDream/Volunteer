@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <div class="col">
+        <form action="/search" enctype="multipart/form-data" method="post" align="center">
+            <label>
+                <input name="search" type="radio" value="name">
+                Organization Name
+                <input name="Name" type="text">
+            </label> <br>
+            <label>
+                <input name="search" type="radio" value="category">
+                Category of Charity
+                <input name="Category" type="text">
+            </label> <br>
+            <label>
+                <input name="search" type="radio" value="distance">
+                Distance to Charity
+                <input name="Distance" placeholder="In km" type="number">
+            </label> <br><br>
+        <!-- Button for submitting request -->
+        <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Student Profile
+{% endblock %}
+
+
+{% block main %}
+        <div class="profile">
+        <center>
+            <p class="title">
+                <img src= "{{image}}" alt="Profile Pic" width=500 height=400 style="float: left;">
+                <strong>
+                    {{ name }} <br><br>
+                </strong>
+                {{ email }} <br><br>
+                {% for experience in experiences %}
+                    {{ experience.education_experience }}<br><br>
+                    {{ experience.volunteer_experience }}
+                {% endfor %}
+            </p>
+            <br><br>
+        </div>
+{% endblock %}

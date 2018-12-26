@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register_Profile_Photo
+{% endblock %}
+
+{% block main %}
+    <form action="/registerstu2" method="post" enctype="multipart/form-data">
+        <input type="file" name="pic" accept="image/*">
+        <button class="btn btn-primary" type="submit">Next</button>
+    </form>
+{% endblock %}

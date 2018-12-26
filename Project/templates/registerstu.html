@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register_Personal_Details
+{% endblock %}
+
+{% block main %}
+    <form action="/registerstu" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Full Name" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="birthday" placeholder="Please input your birthday in MM/DD/YYYY format" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="phone" placeholder="Telephone" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email Address" type="email">
+        </div>
+        Please input the lat. and long. of your address after clicking on your location.
+        <div id="googleMap" align="center" style="width:400px;height:400px;"></div>
+        <script>
+            function myMap() {
+            var mapProp= {
+                center:new google.maps.LatLng(8.980603,38.757759),
+                zoom:10,
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+            google.maps.event.addListener(map, 'click', function(event) {
+            alert(event.latLng.lat() + ", " + event.latLng.lng());
+            });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoMVLSorAtLxfI_92MI-pc2y48wxzUo80&callback=myMap"></script>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="lat" step="any" placeholder="Latitude" type="number">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="long" step="any" placeholder="Longitude" type="number">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input autofocus class="form-control" name="confirmation" placeholder="Re-enter password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Next</button>
+    </form>
+{% endblock %}
+

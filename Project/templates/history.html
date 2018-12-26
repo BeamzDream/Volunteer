@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <form action="/history" method="post">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Organization</th>
+            <th scope="col">Total Time Worked</th>
+          </tr>
+        </thead>
+        <!-- Looping over whole list to display orderly on screen -->
+
+        <tbody>
+          {% for row in history %}
+          <tr>
+            <td>{{ row.organization }}</td>
+            <td>{{ row.time_worked }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+        <div class="form-group">
+            Input Organization Name for more details:
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Organization Name" type="text">
+        </div>
+        <center>
+          <button class="btn btn-primary" class="center" type="submit">Submit</button>
+        </center>
+    </form>
+
+{% endblock %}
